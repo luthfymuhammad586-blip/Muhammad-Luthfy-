@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Website Pertama — Albert</title>
+  <meta name="description" content="Website sederhana untuk GitHub Pages — halaman portofolio dan kontak." />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7c3aed}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,var(--bg),#071024); color:#e6eef8; line-height:1.5}
+    .container{max-width:960px;margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021025}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .hero{margin:36px 0;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+    h1{margin:0 0 6px;font-size:28px}
+    p.lead{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);border:1px solid rgba(255,255,255,0.03)}
+    footer{text-align:center;color:var(--muted);margin-top:28px;font-size:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:#021025;text-decoration:none;font-weight:600}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}nav a{display:none}}
+    /* small accessibility focus */
+    a:focus{outline:3px solid rgba(124,58,237,0.25);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <div style="font-weight:700">Albert</div>
+          <div style="font-size:12px;color:var(--muted)">Website Pertama</div>
+        </div>
+      </div>
+      <nav aria-label="Navigasi utama">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header><section class="hero">
+  <h1>Halo — saya Albert</h1>
+  <p class="lead">Ini adalah website statis sederhana yang siap dipasang di GitHub Pages. Cocok untuk portofolio awal atau halaman profil.</p>
+
+  <div class="grid">
+    <main class="card">
+      <h2 id="about">Tentang</h2>
+      <p style="color:var(--muted)">Tambahkan deskripsi singkat tentang dirimu di sini — hobi, pekerjaan, atau keahlian.</p>
+
+      <h3 id="projects" style="margin-top:18px">Proyek</h3>
+      <div class="projects">
+        <div class="project">
+          <strong>Proyek 1</strong>
+          <div style="color:var(--muted);font-size:13px">Deskripsi singkat proyek.</div>
+        </div>
+        <div class="project">
+          <strong>Proyek 2</strong>
+          <div style="color:var(--muted);font-size:13px">Deskripsi singkat proyek.</div>
+        </div>
+        <div class="project">
+          <strong>Proyek 3</strong>
+          <div style="color:var(--muted);font-size:13px">Deskripsi singkat proyek.</div>
+        </div>
+      </div>
+
+      <p style="margin-top:18px"><a class="btn" href="#contact">Hubungi saya</a></p>
+    </main>
+
+    <aside class="card">
+      <h4>Kontak</h4>
+      <p style="color:var(--muted);font-size:14px">Isi alamat email atau tautan sosial di sini.</p>
+
+      <form id="contact" onsubmit="event.preventDefault();alert('Terima kasih — formulir ini contoh saja.');">
+        <label style="display:block;font-size:13px;margin-top:8px">Email
+          <input type="email" required placeholder="nama@contoh.com" style="width:100%;margin-top:6px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+        </label>
+        <label style="display:block;font-size:13px;margin-top:8px">Pesan
+          <textarea required placeholder="Halo..." style="width:100%;margin-top:6px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+        </label>
+        <div style="margin-top:12px"><button class="btn" type="submit">Kirim</button></div>
+      </form>
+
+      <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+      <div style="font-size:13px;color:var(--muted)">Instruksi singkat:
+        <ul style="padding-left:18px;margin:6px 0 0">
+          <li>Buat repo GitHub baru (contoh: <code>albert.github.io</code> untuk user site).</li>
+          <li>Letakkan file ini sebagai <code>index.html</code> di root repo lalu push.</li>
+          <li>Untuk GitHub Pages: buka Settings → Pages dan aktifkan dari branch <code>main</code> (atau gunakan branch <code>gh-pages</code>).</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  © " + new Date().getFullYear() + " Albert — dibuat dengan bantuan assistant"
+</footer>
+
+  </div>  <script>
+    // Ganti copyright dinamis
+    (function(){
+      try{
+        const el = document.querySelector('footer');
+        el.innerHTML = '© ' + new Date().getFullYear() + ' Albert — dibuat dengan bantuan assistant';
+      }catch(e){}
+    })();
+  </script></body>
+</html>
